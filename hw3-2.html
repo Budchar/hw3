@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="mycss.css">
+    <script type="text/javascript" src="myscript.js">
+    </script>
+    <style></style>
+    <title>hw3-2</title>
+</head>
+
+<body>
+    <h3>Simple Resume</h3>
+    <nav>
+        <ul class="row">
+            <li id="tab1" onclick="showcontent(1)">Basic Information</li>
+            <li id="tab2" onclick="showcontent(2)">Work History</li>
+            <li id="tab3" onclick="showcontent(3)">Education</li>
+            <li id="tab4" onclick="showcontent(4)">Award</li>
+            <li id="tab5" onclick="showcontent(5)">Skills</li>
+            <li id="tab6" onclick="showcontent(6)">Other</li>
+            <li id="tab7" onclick="showcontent(7)">Overview</li>
+        </ul>
+    </nav>
+    <section>
+        <article id="div_content">
+            <div id="content1">
+                <ul>
+                    <li> Last Name: <input type="text" id="lname" value="sehoon"></li>
+                    <li> Middle Name: <input type="text" id="mname" value="goel"></li>
+                    <li> First Name: <input type="text" id="fname" value="lee"></li>
+                    <li> Image: <input type="file" id="image"></li>
+                    <li> Contact Information
+                        <!--주소, 이메일, 전화번호 등-->
+                        <ul>
+                            <li> Address:<input type="text" id="address" value="earth"></li>
+                            <li> Call No.:<input type="text" id="call" value="one"></li>
+                            <li id="email"> E-mail:<input type="" id="mail_id">@
+                                <select id="mail">
+                                    <option value="@gmail.com">@gmail.com</option>
+                                    <option value="@naver.com">@naver.com</option>
+                                    <option value="@hanmail.com">@hanmail.com</option>
+                                    <option value="@lycos.com">@lycos.com</option>
+                                </select></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="content2">
+                Career Objective:
+                <input type="text" id="career">
+            </div>
+            <div id="content3">
+                Education
+                <ul>
+                    <li><input type="text"></li>
+                </ul>
+                <!--학교, 전공, 기간 추가 가능하게 만들어야 함-->
+            </div>
+            <div id="content4">
+                Experience
+                <ul>
+                    <li><input type="text"></li>
+                    <li><input type="text"></li>
+                    <li><input type="text"></li>
+                </ul>
+                <!--조직, 업무, 기간-->
+            </div>
+            <div id="content5">
+                <table>
+                    <caption></caption>
+                    <thead></thead>
+                    <tfoot>Skill</tfoot>
+                    <tbody></tbody>
+                </table>
+                <!--table 형태-->
+            </div>
+            <div id="content6">
+                Other
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <!--리스트 형태-->
+            </div>
+            <div id="content7">
+                overview
+                <input type="button" onclick="myprint()" value="제출" />
+                <div id="output">
+                    <h3>Resume</h3>
+                    <div id="out_basic">
+                        <ul id="out_NC">
+                            <li id="out_name"></li>
+                            <li id="out_call"></li>
+                            <li id="out_mail"></li>
+                            <li id="out_adrs"></li>
+                        </ul>
+                        <div id="out_image"></div>
+                    </div>
+                    <div id="out_career"></div>
+                    <div id="out_edu"></div>
+                    <div id="out_exp"></div>
+                    <div id="out_skill"></div>
+                </div>
+            </div>
+        </article>
+    </section>
+</body>
+
+</html>
