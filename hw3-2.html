@@ -32,19 +32,13 @@
                     <li> Last Name: <input type="text" id="lname" value="sehoon"></li>
                     <li> Middle Name: <input type="text" id="mname" value="goel"></li>
                     <li> First Name: <input type="text" id="fname" value="lee"></li>
-                    <li> Image: <input type="file" id="image"></li>
+                    <li> Image: <input type="file" accept="/*" id="image" onchange="loadImg(event)"></li>
                     <li> Contact Information
                         <!--주소, 이메일, 전화번호 등-->
                         <ul>
                             <li> Address:<input type="text" id="address" value="earth"></li>
-                            <li> Call No.:<input type="text" id="call" value="one"></li>
-                            <li id="email"> E-mail:<input type="" id="mail_id">@
-                                <select id="mail">
-                                    <option value="@gmail.com">@gmail.com</option>
-                                    <option value="@naver.com">@naver.com</option>
-                                    <option value="@hanmail.com">@hanmail.com</option>
-                                    <option value="@lycos.com">@lycos.com</option>
-                                </select></li>
+                            <li> Call No.:<input type="text" id="call" value="one-is-the"></li>
+                            <li> E-mail:<input type="text" id="mail_id" value="frostbastard@gmail.com"></li>
                         </ul>
                     </li>
                 </ul>
@@ -55,8 +49,8 @@
             </div>
             <div id="content3">
                 Education
-                <ul>
-                    <li><input type="text"></li>
+                <ul id="Edu">
+                    <li>학교:<input type="text" value="고대"></li>
                 </ul>
                 <!--학교, 전공, 기간 추가 가능하게 만들어야 함-->
             </div>
@@ -74,7 +68,10 @@
                     <caption></caption>
                     <thead></thead>
                     <tfoot>Skill</tfoot>
-                    <tbody></tbody>
+                    <tbody>
+                        <th>1</th>
+                        <td>2</td>
+                    </tbody>
                 </table>
                 <!--table 형태-->
             </div>
@@ -99,9 +96,11 @@
                             <li id="out_mail"></li>
                             <li id="out_adrs"></li>
                         </ul>
-                        <div id="out_image"></div>
+                        <img id="out_image" width="100px" height="100px"/>
                     </div>
-                    <div id="out_career"></div>
+                    <div id="out_career">
+                        <ul id="career_ul"></ul>
+                    </div>
                     <div id="out_edu"></div>
                     <div id="out_exp"></div>
                     <div id="out_skill"></div>
