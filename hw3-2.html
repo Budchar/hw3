@@ -44,7 +44,7 @@
                 </ul>
             </div>
             <div id="content2">
-                Career Objective:
+                Career Objective:<br>
                 <input type="text" id="career">
             </div>
             <div id="content3">
@@ -52,27 +52,37 @@
                 <ul id="Edu">
                     <li>학교:<input type="text" value="고대"></li>
                 </ul>
+                <input type="button" value="+" onclick="Add_li_edu()">
                 <!--학교, 전공, 기간 추가 가능하게 만들어야 함-->
             </div>
             <div id="content4">
                 Experience
-                <ul>
-                    <li><input type="text"></li>
-                    <li><input type="text"></li>
+                <ul id="exp">
                     <li><input type="text"></li>
                 </ul>
+                <input type="button" value="+" onclick="Add_li_exp()">
                 <!--조직, 업무, 기간-->
             </div>
             <div id="content5">
-                <table>
-                    <caption></caption>
-                    <thead></thead>
-                    <tfoot>Skill</tfoot>
-                    <tbody>
-                        <th>1</th>
-                        <td>2</td>
-                    </tbody>
-                </table>
+                <div id="Skill_table">
+                    <table>
+                        <caption></caption>
+                        <thead>
+                            <th>분야</th>
+                            <th>기술명</th>
+                            <th>실력</th>
+                        </thead>
+                        <tfoot>Skill</tfoot>
+                        <tbody id="Skill_table_body">
+                            <tr>
+                                <td><input type="text" value="정보기술"></td>
+                                <td><input type="text" value="정보처리기사"></td>
+                                <td><input type="text" value="-"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <input type="button" value="+" onclick="Add_tr()">
                 <!--table 형태-->
             </div>
             <div id="content6">
@@ -90,20 +100,31 @@
                 <div id="output">
                     <h3>Resume</h3>
                     <div id="out_basic">
+                        <h4>기본 사항</h4>
                         <ul id="out_NC">
                             <li id="out_name"></li>
                             <li id="out_call"></li>
                             <li id="out_mail"></li>
                             <li id="out_adrs"></li>
                         </ul>
-                        <img id="out_image" width="100px" height="100px"/>
+                        <img id="out_image" width="100px" height="100px" />
                     </div>
                     <div id="out_career">
-                        <ul id="career_ul"></ul>
+                        <h4>Objective</h4>
                     </div>
-                    <div id="out_edu"></div>
-                    <div id="out_exp"></div>
-                    <div id="out_skill"></div>
+                    <div id="out_edu">
+                        <h4>Education</h4>
+                        <ul id="edu_ul"></ul>
+                    </div>
+                    <div id="out_exp">
+                        <h4>Experience</h4>
+                    </div>
+                    <div id="out_skill">
+                        <h4>Skill</h4>
+                        <div id="out_skill_table">
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </article>
