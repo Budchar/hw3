@@ -52,7 +52,7 @@
                 <ul id="Edu">
                     <li>학교:<input type="text" value="고대"></li>
                 </ul>
-                <input type="button" value="+" onclick="Add_li_edu()">
+                <input type="button" value="+" onclick="Add.Add_li_edu()">
                 <!--학교, 전공, 기간 추가 가능하게 만들어야 함-->
             </div>
             <div id="content4">
@@ -60,7 +60,7 @@
                 <ul id="exp">
                     <li><input type="text"></li>
                 </ul>
-                <input type="button" value="+" onclick="Add_li_exp()">
+                <input type="button" value="+" onclick="Add.Add_li_exp()">
                 <!--조직, 업무, 기간-->
             </div>
             <div id="content5">
@@ -82,48 +82,53 @@
                         </tbody>
                     </table>
                 </div>
-                <input type="button" value="+" onclick="Add_tr()">
+                <input type="button" value="+" onclick="Add.Add_tr()">
                 <!--table 형태-->
             </div>
             <div id="content6">
                 Other
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                <ul id="etc">
+                    <li><input type="text"></li>
                 </ul>
-                <!--리스트 형태-->
+                <input type="button" value="+" onclick="Add.Add_li_etc()">
             </div>
             <div id="content7">
                 overview
                 <input type="button" onclick="myprint()" value="제출" />
                 <div id="output">
-                    <h3>Resume</h3>
+                    <h3>Curriculum Vitae</h3>
                     <div id="out_basic">
+                        <h4 id="out_name"></h4>
                         <h4>기본 사항</h4>
                         <ul id="out_NC">
-                            <li id="out_name"></li>
                             <li id="out_call"></li>
                             <li id="out_mail"></li>
                             <li id="out_adrs"></li>
                         </ul>
                         <img id="out_image" width="100px" height="100px" />
                     </div>
-                    <div id="out_career">
+                    <div>
                         <h4>Objective</h4>
+                        <p id="out_career">
+                        </p>
                     </div>
                     <div id="out_edu">
                         <h4>Education</h4>
-                        <ul id="edu_ul"></ul>
+                        <ul id="out_edu_ul"></ul>
                     </div>
                     <div id="out_exp">
                         <h4>Experience</h4>
+                        <ul id="out_exp_ul"></ul>
                     </div>
                     <div id="out_skill">
                         <h4>Skill</h4>
                         <div id="out_skill_table">
 
                         </div>
+                    </div>
+                    <div id="out_etc">
+                        <h4>Others</h4>
+                        <ul id="out_etc_ul"></ul>
                     </div>
                 </div>
             </div>
