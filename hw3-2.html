@@ -95,11 +95,51 @@
             <div id="content7">
                 overview
                 <input type="button" onclick="myprint()" value="제출" />
+                <span>Title Font Family :
+                    <select id="font_title" onchange="Change_font.Title()">
+                        <option value="4">Default</option>
+                        <option value="1">Courier New</option>
+                        <option value="2">Lucida Console</option>
+                        <option value="3">Impact</option>
+                    </select>
+                </span>
+                <span>Content Font Family :
+                    <select id="font_content" onchange="Change_font.Content()">
+                        <option value="1">Default</option>
+                        <option value="2">Arial</option>
+                        <option value="3">Georgia</option>
+                    </select>
+                </span>
+                <span>Title Font Size :
+                    <select id="size_title" onchange="Change_size.Title()">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </span>
+                <span>Subtitle Font Size :
+                    <select id="size_subtitle" onchange="Change_size.Subitle()">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </span>
+                <span>Content Font Size :
+                    <select id="size_content" onchange="Change_size.Content()">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </span>
+                <!-- 배경 변경 -->
                 <div id="output">
                     <h3>Curriculum Vitae</h3>
                     <div id="out_basic">
                         <h4 id="out_name"></h4>
-                        <h4>기본 사항</h4>
+                        <h4>Contact & Address</h4>
                         <ul id="out_NC">
                             <li id="out_call"></li>
                             <li id="out_mail"></li>
@@ -123,7 +163,6 @@
                     <div id="out_skill">
                         <h4>Skill</h4>
                         <div id="out_skill_table">
-
                         </div>
                     </div>
                     <div id="out_etc">
