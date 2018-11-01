@@ -26,33 +26,33 @@ function myprint() {
     document.getElementById("out_adrs").innerText = adrs;
     document.getElementById('out_mail').innerText = mail;
 
-    var edu = document.getElementById("Edu");
-    var edu_input = edu.getElementsByTagName('input');
-    for (var i = 0; i < edu_input.length; i++) {
-        edu.getElementsByTagName('input')[i].readOnly = true;
+    function ul_print(ul) {
+        var value = document.getElementById(ul);
+        var value_copy = value.cloneNode(true);
+        var value_input = value_copy.getElementsByTagName('input');
+        var value_li = value_copy.getElementsByTagName('li');
+        var length = value_input.length;
+        for (var i = length - 1; i > -1; i--) {
+            value_li[i].innerHTML = value_input[i].value;
+        }
+        document.getElementById('out_' + ul + '_ul').innerHTML = value_copy.innerHTML;
     }
-    document.getElementById('out_edu_ul').innerHTML = edu.innerHTML;
 
-    var exp = document.getElementById("exp");
-    var exp_input = exp.getElementsByTagName('input');
-    for (var i = 0; i < exp_input.length; i++) {
-        exp.getElementsByTagName('input')[i].readOnly = true;
-    }
-    document.getElementById('out_exp_ul').innerHTML = exp.innerHTML;
+    ul_print("edu");
+    ul_print("exp");
+    ul_print("etc");
 
-    var skill = document.getElementById("Skill_table");
-    var skill_input = skill.getElementsByTagName('input');
-    for (var i = 0; i < skill_input.length; i++) {
-        skill.getElementsByTagName('input')[i].readOnly = true;
+    function table_print(table) {
+        var skill = document.getElementById(table);
+        var skill_copy = skill.cloneNode(true);
+        var skill_input = skill_copy.getElementsByTagName('input');
+        var skill_td = skill_copy.getElementsByTagName('td');
+        for (var i = skill_input.length - 1; i > -1; i--) {
+            skill_td[i].innerHTML = skill_input[i].value;
+        }
+        document.getElementById("out_skill_table").innerHTML = skill_copy.innerHTML;
     }
-    document.getElementById("out_skill_table").innerHTML = skill.innerHTML;
-
-    var etc = document.getElementById("etc");
-    var etc_input = etc.getElementsByTagName('input');
-    for (var i = 0; i < etc_input.length; i++) {
-        etc.getElementsByTagName('input')[i].readOnly = true;
-    }
-    document.getElementById('out_etc_ul').innerHTML = etc.innerHTML;
+    table_print("Skill_table");
 }
 
 var loadImg = function (event) {
@@ -64,7 +64,7 @@ var Add = {
     Add_li_edu: function () {
         var li = document.createElement('li');
         li.innerHTML = '<input type="text">';
-        document.getElementById('Edu').appendChild(li);
+        document.getElementById('edu').appendChild(li);
     },
     Add_li_exp: function () {
         var li = document.createElement('li');
@@ -94,7 +94,7 @@ var Add = {
 var Change_font = {
     Title: function () {
         var option_title = document.getElementById('font_title').value;
-        change_title = function(font){
+        change_title = function (font) {
             document.querySelector('#output>h3').style.fontFamily = font;
             var h4 = document.querySelectorAll('#output>div>h4');
             for (var i = 0; i < h4.length; i++) {
@@ -102,75 +102,102 @@ var Change_font = {
             }
         };
 
-        if (option_title === '1') {change_title("Courier New");}
-        else if (option_title === '2') {change_title("Lucida Console");}
-        else if (option_title === '3') {change_title("impact");}
-        else (change_title("Time New Roman"))
+        if (option_title === '1') {
+            change_title("Courier New");
+        } else if (option_title === '2') {
+            change_title("Lucida Console");
+        } else if (option_title === '3') {
+            change_title("impact");
+        } else(change_title("Time New Roman"))
     },
 
     Content: function () {
         var option_content = document.getElementById('font_content').value;
-        change_content = function(font){
+        change_content = function (font) {
             document.querySelector('#out_NC').style.fontFamily = font;
             document.querySelector('#out_career').style.fontFamily = font;
             document.querySelector('#out_edu_ul').style.fontFamily = font;
             document.querySelector('#out_skill_table').style.fontFamily = font;
             document.querySelector('#out_etc_ul').style.fontFamily = font;
-        
+
         };
 
-        if (option_content === '1') {change_content("Times New Roman");}
-        else if (option_content === '2') {change_content("arial");}
-        else if (option_content === '3') {change_content("Georgia");}
+        if (option_content === '1') {
+            change_content("Times New Roman");
+        } else if (option_content === '2') {
+            change_content("arial");
+        } else if (option_content === '3') {
+            change_content("Georgia");
+        }
     },
 }
 
 var Change_size = {
     Title: function () {
-        var option_title = document.getElementById('font_title').value;
-        change_title = function(font){
-            document.querySelector('#output>h3').style.fontFamily = font;
-            var h4 = document.querySelectorAll('#output>div>h4');
-            for (var i = 0; i < h4.length; i++) {
-                h4[i].style.fontFamily = font;
-            }
+        var option_title = document.getElementById('size_title').value;
+        change_size = function (font) {
+            document.querySelector('#output>h3').style.fontSize = font;
         };
 
-        if (option_title === '1') {change_title("Courier New");}
-        else if (option_title === '2') {change_title("Lucida Console");}
-        else if (option_title === '3') {change_title("impact");}
-        else (change_title("Time New Roman"))
+        if (option_title == "1") {
+            change_size('24px');
+        } else if (option_title == '2') {
+            change_size('28px');
+        } else if (option_title == '3') {
+            change_size('36px');
+        }
     },
 
-    Subitle: function () {
-        var option_title = document.getElementById('font_title').value;
-        change_title = function(font){
-            document.querySelector('#output>h3').style.fontFamily = font;
+    Subtitle: function () {
+        var option_title = document.getElementById('size_subtitle').value;
+        change_size = function (font) {
             var h4 = document.querySelectorAll('#output>div>h4');
             for (var i = 0; i < h4.length; i++) {
-                h4[i].style.fontFamily = font;
+                h4[i].style.fontSize = font;
             }
         };
 
-        if (option_title === '1') {change_title("Courier New");}
-        else if (option_title === '2') {change_title("Lucida Console");}
-        else if (option_title === '3') {change_title("impact");}
-        else (change_title("Time New Roman"))
+        if (option_title === '1') {
+            change_size("16px");
+        } else if (option_title === '2') {
+            change_size("20px");
+        } else if (option_title === '3') {
+            change_size("28px");
+        }
     },
 
     Content: function () {
-        var option_content = document.getElementById('font_content').value;
-        change_content = function(font){
-            document.querySelector('#out_NC').style.fontFamily = font;
-            document.querySelector('#out_career').style.fontFamily = font;
-            document.querySelector('#out_edu_ul').style.fontFamily = font;
-            document.querySelector('#out_skill_table').style.fontFamily = font;
-            document.querySelector('#out_etc_ul').style.fontFamily = font;
-        
+        var option_content = document.getElementById('size_content').value;
+        change_content = function (font) {
+            document.querySelector('#out_NC').style.fontSize = font;
+            document.querySelector('#out_career').style.fontSize = font;
+            document.querySelector('#out_edu_ul').style.fontSize = font;
+            document.querySelector('#out_exp_ul').style.fontSize = font;
+            document.querySelector('#out_skill_table').style.fontSize = font;
+            document.querySelector('#out_etc_ul').style.fontSize = font;
         };
 
-        if (option_content === '1') {change_content("Times New Roman");}
-        else if (option_content === '2') {change_content("arial");}
-        else if (option_content === '3') {change_content("Georgia");}
+        if (option_content === '1') {
+            change_content("12px");
+        } else if (option_content === '2') {
+            change_content("16px");
+        } else if (option_content === '3') {
+            change_content("20px");
+        }
+    },
+}
+
+var Change_bgc = {
+    bgc: function () {
+        var option = document.getElementById('bgc');
+        var value = option.value;
+        var output = document.querySelector("#output");
+        if (value == 1) {
+            output.style.backgroundColor = "#ffccff";
+        } else if (value == 2) {
+            output.style.backgroundImage = "url('oDDUgi.jpg')";
+        } else {
+            alert('bgc_problem');
+        };
     },
 }

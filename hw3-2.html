@@ -49,8 +49,8 @@
             </div>
             <div id="content3">
                 Education
-                <ul id="Edu">
-                    <li>학교:<input type="text" value="고대"></li>
+                <ul id="edu">
+                    <li><input type="text" value="고대"></li>
                 </ul>
                 <input type="button" value="+" onclick="Add.Add_li_edu()">
                 <!--학교, 전공, 기간 추가 가능하게 만들어야 함-->
@@ -64,6 +64,7 @@
                 <!--조직, 업무, 기간-->
             </div>
             <div id="content5">
+                skill
                 <div id="Skill_table">
                     <table>
                         <caption></caption>
@@ -72,7 +73,6 @@
                             <th>기술명</th>
                             <th>실력</th>
                         </thead>
-                        <tfoot>Skill</tfoot>
                         <tbody id="Skill_table_body">
                             <tr>
                                 <td><input type="text" value="정보기술"></td>
@@ -112,29 +112,32 @@
                 </span>
                 <span>Title Font Size :
                     <select id="size_title" onchange="Change_size.Title()">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                        <option value="1">24px</option>
+                        <option value="2">28px</option>
+                        <option value="3">36px</option>
                     </select>
                 </span>
                 <span>Subtitle Font Size :
-                    <select id="size_subtitle" onchange="Change_size.Subitle()">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                    <select id="size_subtitle" onchange="Change_size.Subtitle()">
+                        <option value="1">16px</option>
+                        <option value="2">20px</option>
+                        <option value="3">28px</option>
                     </select>
                 </span>
                 <span>Content Font Size :
                     <select id="size_content" onchange="Change_size.Content()">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                        <option value="1">12px</option>
+                        <option value="2">16px</option>
+                        <option value="3">20px</option>
                     </select>
                 </span>
-                <!-- 배경 변경 -->
+                <span>
+                    Background Color : 
+                    <select id="bgc" onchange="Change_bgc.bgc()">
+                        <option value="1">색깔</option>
+                        <option value="2">그림</option>
+                    </select>
+                </span>
                 <div id="output">
                     <h3>Curriculum Vitae</h3>
                     <div id="out_basic">
