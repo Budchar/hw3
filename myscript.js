@@ -192,9 +192,13 @@ var Change_bgc = {
         var option = document.getElementById('bgc');
         var value = option.value;
         var output = document.querySelector("#output");
+
         if (value == 1) {
+            output.style.backgroundImage = "";
             output.style.backgroundColor = "#ffccff";
         } else if (value == 2) {
+            output.style.backgroundColor = "transparent";
+            output.style.opacity = "1";
             output.style.backgroundImage = "url('oDDUgi.jpg')";
         } else {
             alert('bgc_problem');
